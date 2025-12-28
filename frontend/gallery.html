@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>BIDA FOUNDATION</title>
+  <link rel="icon" href="images/bida-logo.png" />
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo-wrap">
+          <img src="images/bida-logo.png" alt="BIDA Logo" class="logo"/>
+        </div>
+        <div class="brand-text">
+          <div class="org-name">BIDA FOUNDATION</div>
+          <div class="subtitle">Health • Education • Skills • Social Work</div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#work">Our Work</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#get">Get Involved</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section gallery-section">
+    <h2>Gallery</h2>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <div class="gallery-grid" id="gallery"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="foot-about">
+        <img src="images/bida-logo.png" class="logo-small" alt="logo"/>
+        <p>BIDA Foundation — building stronger communities <br> through health, education and skills.</p>
+      </div>
+      <div class="foot-links">
+        <h4>Quick Links</h4>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#work">Our Work</a>
+        <a href="index.html#get">Volunteer</a>
+      </div>
+      <div class="foot-contact">
+        <h4>Contact</h4>
+        <p>Email: info.binafoundation@gmail.com</p>
+        <p>Phone: +91-8521769449</p>
+        <p>Address: Manchitwa, Post Mastichak, PS Dariyapur, District Saran, Bihar - 841219</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span>2020</span> BIDA FOUNDATION — All rights reserved.
+    </div>
+  </footer>
+
+<script>
+  fetch("images/gallery/images.json")
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("gallery");
+
+      data.images.forEach(img => {
+        const div = document.createElement("div");
+        div.className = "gallery-item";
+        div.innerHTML = `
+          <img src="images/gallery/${img}" alt="">
+        `;
+        container.appendChild(div);
+      });
+    })
+    .catch(err => console.error("Error loading gallery:", err));
+</script>
+</body>
+</html>

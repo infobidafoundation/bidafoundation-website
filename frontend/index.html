@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>BIDA FOUNDATION</title>
+  <link rel="icon" href="images/bida-logo.png" />
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo-wrap">
+          <img src="images/bida-logo.png" alt="BIDA Logo" class="logo"/>
+        </div>
+        <div class="brand-text">
+          <div class="org-name">BIDA FOUNDATION</div>
+          <div class="subtitle">Health • Education • Skills • Social Work</div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#work">Our Work</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#get">Get Involved</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-left">
+        <h1>BIDA FOUNDATION</h1>
+        <p class="lead">Empowering communities with health, education, skills and social support.</p>
+        <p class="muted">We run health camps, tuition support, vocational training and family counselling. Saath hi women empowerment par special focus.</p>
+        <div class="hero-ctas">
+          <a href="#about" class="btn primary">Know More</a>
+          <a href="#get" class="btn outline">Become Volunteer</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- REPLACE the old .card-3d block with this -->
+        <div class="card-3d">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="images/bida-logo.png" alt="BIDA Logo big" class="big-logo"/>
+              <h3>Join our mission</h3>
+             <p>Small help, big change — your support matters.</p>
+             <div class="mini-ctas">
+               <a href="#donate" class="btn small outline">Donate</a>
+               <a href="#get" class="btn small outline">Volunteer</a>
+             </div>
+           </div>
+
+           <div class="card-face card-back">
+              <h3>Impact Numbers</h3>
+              <ul>
+                <li><strong>250+</strong> beneficiaries</li>
+                <li><strong>40</strong> skill sessions</li>
+                <li><strong>30</strong> health camps</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT: Expanded & detailed ===== -->
+    <section id="about" class="section about-expanded">
+      <div class="container">
+        <h2>About Us</h2>
+        <p class="lead-sm">
+          BIDA Foundation is a registered non-profit working to uplift underserved communities through
+          targeted programs in health, education, skill development, and social welfare. Founded with a
+          vision to empower women and families, we focus on sustainable, community-driven solutions:
+        </p>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <h4>Health</h4>
+            <img src="images/gallery/img10.jpg" class="about-img" alt="Founded image">
+            <p>Regular health camps, immunization drives, maternal & child health awareness and free check-ups.</p>
+          </div>
+          <div class="about-card">
+            <h4>Education</h4>
+            <img src="images/gallery/img20.jpg" class="founder" alt="Founded image">
+            <p>After-school tuition, digital literacy workshops, career guidance and scholarship support for needy students.</p>
+          </div>
+          <div class="about-card">
+            <h4>Skill Development</h4>
+            <img src="images/gallery/img6.jpg" class="founder" alt="Founded image">
+            <p>Vocational training courses, soft-skills workshops and placement assistance for youth.</p>
+          </div>
+          <div class="about-card">
+            <h4>Social Work</h4>
+            <img src="images/gallery/img5.jpg" class="founder" alt="Founded image">
+            <p>Community awareness, assistance with government schemes, and disaster support.</p>
+          </div>
+        </div>
+
+        <!-- <p class="more-txt">
+          Hum local level par community leaders ke saath milke chalate hain — participatory approach se sustainable
+          growth dikhte hai. Agar aap volunteer, sponsor ya partner banna chahte ho to contact karein. 
+        </p> -->
+      </div>
+    </section>
+
+    <section id="work" class="section light">
+      <div class="container">
+        <h2>Our Work</h2>
+        <div class="cards-3d">
+          <article class="work-card"><h3>Health</h3><p>Health camps & awareness, women and child focus.</p></article>
+          <article class="work-card"><h3>Education</h3><p>Tutoring, mentorship & digital literacy.</p></article>
+          <article class="work-card"><h3>Skill Development</h3><p>Vocational training & soft skills.</p></article>
+          <article class="work-card"><h3>Social Work</h3><p>Community outreach & scheme assistance.</p></article>
+          <article class="work-card"><h3>Marriage Support</h3><p>Counselling and family support services.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="get" class="section">
+      <div class="container split">
+        <div>
+          <h2>Become a Volunteer</h2>
+          <form id="volunteerForm" class="form card-soft">
+            <input id="v_name" placeholder="Full name" required/>
+            <input id="v_email" type="email" placeholder="Email" required/>
+            <input id="v_phone" placeholder="Phone" required/>
+            <select id="v_area">
+              <option>Health</option><option>Education</option><option>Skill Development</option>
+              <option>Social Work</option><option>Marriage Support</option>
+            </select>
+            <textarea id="v_msg" placeholder="Message (optional)"></textarea>
+            <div class="form-actions">
+              <button type="submit" class="btn primary">Submit</button>
+              <button type="reset" class="btn outline">Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <h2 id="donate">Donate</h2>
+          <div class="donate card-soft">
+            <label>Amount (INR)</label>
+            <input id="donationAmount" type="number" min="1" placeholder="Enter amount"/>
+            <div class="donate-actions">
+              <button id="genQR" class="btn primary">Generate QR & Pay</button>
+              <small class="muted">You will receive receipt after successful payment.</small>
+            </div>
+          </div>
+
+          <div id="donationResult" class="donation-result card-soft" style="display:none;">
+            <h4>Payment Receipt</h4>
+            <div id="qrContainer" style="margin-bottom:10px;"></div>
+            <div id="receiptLink"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section light">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <!-- <p class="lead-sm">Email: <strong>info.binafoundation@gmail.com</strong> • Phone: <strong>+91-8521769449</strong></p> -->
+        <div class="contact-grid">
+          <form id="contactForm" class="form card-soft">
+            <input id="c_name" placeholder="Your name" required/>
+            <input id="c_email" type="email" placeholder="Email" required/>
+            <textarea id="c_msg" placeholder="Message" required></textarea>
+            <div class="form-actions">
+              <button class="btn primary">Send Message</button>
+            </div>
+          </form>
+
+          <div class="contact-details card-soft">
+            <div class="founder-wrap">
+                <p><strong>Founder: <br>Mr. Vipin Kumar</strong> <br><strong>+91-8521769449</strong></p>
+                <img src="images/founder.jpg" class="founder" alt="Founded image">
+            </div>
+            <h4>Address</h4>
+            <p>
+            Manchitwa, Post Mastichak<br>
+            PS Dariyapur,District Saran, Bihar<br>
+            Pin Code: 841219
+            </p>
+            <h4>Working Hours</h4>
+            <p>Mon–Sat: 9:00 AM – 6:00 PM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="foot-about">
+        <img src="images/bida-logo.png" class="logo-small" alt="logo"/>
+        <p>BIDA Foundation — building stronger communities <br> through health, education and skills.</p>
+      </div>
+      <div class="foot-links">
+        <h4>Quick Links</h4>
+        <a href="#about">About</a>
+        <a href="#work">Our Work</a>
+        <a href="#get">Volunteer</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div class="foot-contact">
+        <h4>Contact</h4>
+        <p>Email: info.binafoundation@gmail.com</p>
+        <p>Phone: +91-8521769449</p>
+        <p>Address: Manchitwa, Post Mastichak, PS Dariyapur, District Saran, Bihar - 841219</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span>2020</span> BIDA FOUNDATION — All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Razorpay -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <script>
+    // -------- CONFIG: API base --------
+    const API_BASE = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:5000' : 'https://YOUR_BACKEND_URL_HERE';
+    // Replace 'YOUR_BACKEND_URL_HERE' with your deployed backend URL (Render/Railway) when live.
+
+    document.getElementById('year').innerText = new Date().getFullYear();
+    
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Smooth scroll anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+
+    // Volunteer submit
+    document.getElementById('volunteerForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const data = {
+        name: v_name.value, email: v_email.value, phone: v_phone.value, area: v_area.value, message: v_msg.value
+      };
+      try{
+        const res = await fetch(API_BASE + '/api/volunteer', {
+          method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
+        });
+        const out = await res.json();
+        alert(out.msg || 'Submitted successfully');
+        document.getElementById('volunteerForm').reset();
+      }catch(err){
+        console.error(err); alert('Error submitting form');
+      }
+    });
+
+    // Contact submit
+    document.getElementById('contactForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const data = { name: c_name.value, email: c_email.value, message: c_msg.value };
+      try{
+        const res = await fetch(API_BASE + '/api/contact', {
+          method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
+        });
+        const out = await res.json();
+        alert(out.msg || 'Message sent');
+        document.getElementById('contactForm').reset();
+      }catch(err){
+        console.error(err); alert('Error sending message');
+      }
+    });
+
+    // Donation: create order -> open checkout -> verify -> show QR & receipt
+    document.getElementById('genQR').addEventListener('click', async (e)=>{
+      e.preventDefault();
+      const amount = Number(document.getElementById('donationAmount').value);
+      if(!amount || amount <= 0){ alert('Enter a valid amount'); return; }
+
+      try{
+        // 1) create order on server
+        const createRes = await fetch(API_BASE + '/api/donate/create-order', {
+          method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ amount })
+        });
+        const order = await createRes.json();
+        if(createRes.status !== 200){ alert(order.error || 'Could not create order'); return; }
+
+        // 2) open Razorpay checkout
+        const options = {
+          key: order.key_id,
+          amount: order.amount,
+          currency: order.currency,
+          name: 'BIDA FOUNDATION',
+          description: 'Donation',
+          order_id: order.id,
+          handler: async function (response){
+            // 3) verify payment at backend
+            try{
+              const verifyRes = await fetch(API_BASE + '/api/donate/verify', {
+                method:'POST', headers:{'Content-Type':'application/json'},
+                body: JSON.stringify({
+                  razorpay_order_id: response.razorpay_order_id,
+                  razorpay_payment_id: response.razorpay_payment_id,
+                  razorpay_signature: response.razorpay_signature
+                })
+              });
+              const verifyOut = await verifyRes.json();
+              if(verifyOut.success){
+                // show qr and receipt
+                document.getElementById('donationResult').style.display = 'block';
+                document.getElementById('qrContainer').innerHTML = `<img src="${verifyOut.qr_data}" alt="receipt-qr" style="max-width:220px;border-radius:8px"/>`;
+                document.getElementById('receiptLink').innerHTML = `<a href="${verifyOut.receipt_url}" target="_blank" class="btn small">Open / Download Receipt</a>`;
+              } else {
+                alert('Payment verification failed');
+              }
+            }catch(err){
+              console.error(err); alert('Verification error');
+            }
+          },
+          modal: { escape: true },
+          theme: { color: '#8b1536' }
+        };
+        const rzp = new Razorpay(options);
+        rzp.open();
+      }catch(err){
+        console.error(err); alert('Payment start error');
+      }
+    });
+  </script>
+  <!-- ================= EMAILJS ================= -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+    (function () {
+      emailjs.init("TRedas-umEM40R6cu");
+    })();
+  </script>
+
+  <!-- ================= CONTACT JS ================= -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  emailjs.send("service_hftcsct", "template_65or6eb", {
+    name: document.getElementById("c_name").value,
+    email: document.getElementById("c_email").value,
+    message: document.getElementById("c_msg").value
+  })
+  .then(() => {
+    alert("✅ Message sent successfully!");
+    document.getElementById("contactForm").reset();
+  })
+  .catch((err) => {
+    console.error(err);
+    alert("❌ Failed to send message");
+  });
+});
+</script>
+
+
+  <!-- ================= VOLUNTEER JS ================= -->
+<script>
+document.getElementById("volunteerForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  emailjs.send("service_hftcsct", "template_a8is60q", {
+    name: document.getElementById("v_name").value,
+    email: document.getElementById("v_email").value,
+    phone: document.getElementById("v_phone").value,
+    area: document.getElementById("v_area").value,
+    message: document.getElementById("v_msg").value
+  })
+  .then(() => {
+    alert("✅ Volunteer request submitted successfully!");
+    document.getElementById("volunteerForm").reset();
+  })
+  .catch((err) => {
+    console.error(err);
+    alert("❌ Volunteer submission failed");
+  });
+});
+</script>
+
+</body>
+</html>

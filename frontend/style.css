@@ -1,0 +1,293 @@
+:root{
+  /* Logo color palette (blue + green) - change if you want different shades */
+  --logo-blue: #1f6fb8;     /* main blue from logo */
+  --logo-green: #39a84b;    /* main green from logo */
+  --accent-dark: #0f2a3d;   /* deep text color */
+  --bg: #f6f8fa;
+  --card: #ffffff;
+  --muted: #56606a;
+  --soft-shadow: 8px 10px 22px rgba(11,18,25,0.06);
+  --deep-shadow: 18px 22px 44px rgba(11,18,25,0.10);
+  --radius: 14px;
+}
+
+/* RESET */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#f7f9fb,#ffffff);
+  color: var(--accent-dark);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.45;
+  padding-bottom:40px;
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 90;
+    padding: 8px;
+}
+
+/* LAYOUT CONTAINERS */
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* NAVBAR */
+.navbar{
+  background: linear-gradient(90deg, var(--logo-blue), var(--logo-green));
+  padding:14px 0;
+  position:sticky;top:0;z-index:80;
+  box-shadow: 0 6px 18px rgba(8,12,20,0.08);
+}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo-wrap{
+  width:54px;height:54px;border-radius:12px;background:var(--card);display:flex;align-items:center;justify-content:center;padding:6px;
+  box-shadow: 4px 6px 14px rgba(10,15,20,0.06), -4px -4px 10px rgba(255,255,255,0.6);
+}
+.logo{height:42px;object-fit:contain}
+.brand-text .org-name{font-weight:800;color:#fff;letter-spacing:0.4px}
+.brand-text .subtitle{font-size:12px;color:rgba(255,255,255,0.9)}
+
+.nav-links a{color:rgba(255,255,255,0.95);margin-left:14px;text-decoration:none;font-weight:600}
+.nav-links a:hover{opacity:0.95;transform:translateY(-2px);transition:transform .18s}
+
+/* HERO */
+.hero{max-width:1100px;margin:28px auto;padding:28px;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+.hero-left h1{font-size:2.6rem;color:var(--logo-blue);letter-spacing:0.6px;margin-bottom:8px; max-width:1100px;margin:0 auto;padding:0 20px}
+.lead{font-size:1rem;color:var(--muted);margin-bottom:6px}
+.muted{color:var(--muted);font-size:0.95rem}
+.hero-ctas{margin-top:14px;display:flex;gap:12px}
+.btn{
+  display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700;border:none;cursor:pointer;
+  text-decoration:none;color:#fff;box-shadow:0 8px 18px rgba(10,15,20,0.06);
+}
+.btn.primary{
+  background: linear-gradient(180deg, var(--logo-blue), var(--logo-green));
+}
+.btn.outline{
+  background:transparent;border:2px solid var(--logo-blue);color:var(--logo-blue);padding:8px 12px;border-radius:10px;
+}
+
+/* CARD 3D - FIXED (use inner wrapper and backface-visibility) */
+.card-3d{
+  width:100%;
+  height:320px;
+  border-radius:18px;
+  perspective:1200px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+.card-inner{
+  width:100%;
+  height:100%;
+  border-radius:18px;
+  transform-style:preserve-3d;
+  transition: transform 0.7s cubic-bezier(.2,.9,.2,1), box-shadow .25s;
+  box-shadow: var(--soft-shadow);
+  position:relative;
+}
+.card-3d:hover .card-inner{
+  transform: rotateY(180deg);
+  box-shadow: var(--deep-shadow);
+}
+
+/* Faces */
+.card-face{
+  position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;padding:22px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  background: linear-gradient(180deg,#ffffff,#fbfcfd);
+  backface-visibility: hidden; /* THIS PREVENTS MIRROR TEXT */
+  -webkit-backface-visibility: hidden;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* FRONT face: default */
+.card-front{
+  transform: rotateY(0deg) translateZ(0);
+}
+
+/* BACK face: rotated 180deg so when inner is flipped it shows correctly (not mirrored) */
+.card-back{
+  transform: rotateY(180deg);
+  padding:20px;
+}
+
+/* card content */
+.big-logo{width:110px;height:110px;object-fit:contain;margin-bottom:12px}
+.card-face h3{margin:6px 0 8px;font-size:1.05rem;color:var(--logo-blue)}
+.card-face p{color:var(--muted);font-size:0.95rem}
+
+/* mini CTAs inside card */
+.mini-ctas{display:flex;gap:8px;margin-top:10px}
+.btn.small{padding:6px 10px;border-radius:8px;font-weight:700}
+
+/* SECTIONS AND CARDS */
+/* .section{padding:28px 20px}
+.container{max-width:1100px;margin:0 auto} */
+/* LAYOUT CONTAINERS */
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+/* SECTIONS AND CARDS */
+.section{padding:28px 20px}
+.container{max-width:1100px;margin:0 auto} /* Redefinition, but no harm */
+.section h2{font-size:1.4rem;color:var(--accent-dark);margin-bottom:14px}
+.lead-sm{color:var(--muted);margin-bottom:12px}
+
+/* ABOUT grid */
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:12px}
+.about-card{background:var(--card);padding:16px;border-radius:12px;box-shadow: 10px 10px 20px rgba(8,12,18,0.05);transition:transform .22s}
+.about-card:hover{transform:translateY(-6px)}
+.about-wrap {
+    display: inline-flex;      /* horizontal layout */
+    flex-direction: row;
+    align-items: center;       /* vertical alignment */
+    gap: 12px;                 /* space between image & text */
+    white-space: normal;       /* allow text wrapping */
+}
+
+/* .about-img {
+    width: 108px;
+    height: 108px;
+    border-radius: 8px;
+    padding: 6px;
+    background: #fff;
+    object-fit: contain;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-img:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+} */
+.about-img {
+    width: 140px; /* Wider */
+    height: 90px; /* Shorter */
+    border-radius: 8px;
+    padding: 6px;
+    background: #fff;
+    object-fit: cover; /* Use cover to fit the new rectangular shape */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-img:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* The .founder image in the About cards uses the same style, so update it as well */
+.about-card .founder { 
+    width: 140px; /* Apply new dimensions */
+    height: 90px;
+    border-radius: 8px;
+    padding: 6px;
+    background: #fff;
+    object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* WORK CARDS */
+.cards-3d{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+.work-card{background:var(--card);padding:18px;border-radius:12px;box-shadow: 10px 10px 20px rgba(8,12,18,0.05);transition:transform .25s}
+.work-card:hover{transform:translateY(-8px);box-shadow: 16px 20px 36px rgba(8,12,18,0.09)}
+
+/* FORMS */
+.split{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start}
+.form{display:flex;flex-direction:column;gap:12px}
+.form input,.form textarea,.form select{
+  padding:12px;border-radius:10px;border:1px solid #e9eef2;background:linear-gradient(180deg,#fff,#fbfbfb);box-shadow: inset 2px 2px 6px rgba(0,0,0,0.02);
+}
+.form textarea{min-height:110px;resize:vertical}
+.form-actions{display:flex;gap:10px;margin-top:6px}
+.card-soft{background:linear-gradient(180deg,#ffffff,#fbfbfb);padding:16px;border-radius:12px;box-shadow: 8px 10px 20px rgba(8,12,18,0.04)}
+
+/* DONATE */
+.donate input{width:100%;margin-top:8px;padding:12px;border-radius:10px;border:1px solid #e8eef2}
+.donate-actions{margin-top:10px;display:flex;flex-direction:column;gap:8px}
+.donation-result{background:linear-gradient(180deg,#fff,#fbfbfb);padding:12px;border-radius:10px;box-shadow:8px 8px 20px rgba(0,0,0,0.04)}
+.qr-placeholder{width:160px;height:160px;border-radius:12px;background:linear-gradient(180deg,#fff,#fafafa);display:flex;align-items:center;justify-content:center;border:1px dashed #e6edf2;margin-top:8px}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
+.contact-details p{color:var(--muted);margin-bottom:10px}
+.founder-wrap {
+    display: inline-flex;     /* stays in a single row */
+    flex-direction: row;      /* horizontal layout */
+    align-items: center;
+    gap: 12px;
+    white-space: normal;      /* allow line-wrapping of paragraph */
+}
+
+/* .founder {
+    width: 108px;
+    height: 108px;
+    border-radius: 8px;
+    background: #fff;
+    padding: 6px;
+    object-fit: contain;
+} */
+
+.founder {
+    width:108px;
+    height:108px;
+    border-radius:8px;
+    padding:6px;
+    background:#fff;
+    object-fit:contain;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.founder:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 4px 8px 22px rgba(0,0,0,0.12);
+  transition: transform 0.25s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.06);
+}
+
+
+/* FOOTER */
+.footer{margin-top:36px;background:linear-gradient(180deg,#07121a,#021018);color:#fff;padding:28px 20px;border-top:6px solid rgba(255,255,255,0.02)}
+.footer-inner{display:grid;grid-template-columns:1fr 180px 220px;gap:18px;align-items:start;max-width:1100px;margin:0 auto}
+.logo-small{width:56px;height:56px;border-radius:8px;background:#fff;padding:6px;object-fit:contain}
+.foot-about p{color:rgba(255,255,255,0.9);margin-top:8px}
+.foot-links a,.foot-contact p{display:block;color:rgba(255,255,255,0.88);text-decoration:none;margin:6px 0}
+.footer-bottom{text-align:center;padding:12px 0;color:rgba(255,255,255,0.6);margin-top:12px;border-top:1px solid rgba(255,255,255,0.03)}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .hero{grid-template-columns:1fr 360px}
+  .split{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;gap:18px;padding:22px 16px}
+  .brand-text .org-name{font-size:13px}
+  .logo-wrap{width:46px;height:46px}
+  .big-logo{width:90px;height:90px}
+  .contact-grid{grid-template-columns:1fr}
+}
